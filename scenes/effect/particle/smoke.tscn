@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://cj0m2h0btwpra"]
+
+[ext_resource type="Texture2D" uid="uid://dtsy5vvf51amu" path="res://assets/image/effects/firefly.png" id="1_vqgrt"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_vqgrt"]
+
+[sub_resource type="Gradient" id="Gradient_vqgrt"]
+offsets = PackedFloat32Array(0.493069, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rlpms"]
+gradient = SubResource("Gradient_vqgrt")
+
+[sub_resource type="Curve" id="Curve_7s2c5"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bl2f2"]
+curve = SubResource("Curve_7s2c5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7mt0i"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_bl2f2")
+color_ramp = SubResource("GradientTexture1D_rlpms")
+alpha_curve = SubResource("CurveTexture_vqgrt")
+
+[node name="Smoke" type="GPUParticles2D"]
+modulate = Color(0.67977, 0.67977, 0.67977, 1)
+emitting = false
+amount = 200
+texture = ExtResource("1_vqgrt")
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.07
+process_material = SubResource("ParticleProcessMaterial_7mt0i")

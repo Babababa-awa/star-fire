@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckpablyritca8"]
+
+[ext_resource type="Script" uid="uid://c7ssgjexmk27" path="res://scenes/object/fireflies.gd" id="1_vdfia"]
+[ext_resource type="PackedScene" uid="uid://wa88fmt1jifj" path="res://scenes/effect/particle/fireflies.tscn" id="2_r063a"]
+
+[node name="Fireflies" type="Node2D"]
+z_index = 21
+z_as_relative = false
+script = ExtResource("1_vdfia")
+
+[node name="Fireflies" parent="." instance=ExtResource("2_r063a")]
+unique_name_in_owner = true

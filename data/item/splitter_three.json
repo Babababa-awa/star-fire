@@ -1,0 +1,10 @@
+{
+	"alias": "splitter_three",
+	"type": "component",
+	"meta": {
+		"can_pick_up": false,
+	},
+	"scene": {
+		"path": "res://scenes/unit/item/splitter_three.tscn",
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"alias": "grass",
+	"name": "Grass",
+	"items": [
+		{"alias": "power_button", "position": [768, 1024]},
+		{"alias": "launcher", "position": [768, 0]},
+	],
+	"music": "level",
+}

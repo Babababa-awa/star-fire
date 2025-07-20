@@ -1,0 +1,13 @@
+{
+	"alias": "wire",
+	"type": "component",
+	"meta": {
+		"can_pick_up": true,
+		"can_stack": true,
+		"can_stack_in_items": true,
+		"can_stack_in_level": false
+	},
+	"scene": {
+		"path": "res://scenes/unit/item/wire.tscn",
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"type": "platformer",
+	"area": {
+		"alias": "grass",
+	},
+	"player": {
+		"alias": "jelly",
+		"position": [0, 0],
+		"mode": "none",
+	},
+}

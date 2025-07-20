@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dpyw2bfpkciiu"]
+
+[ext_resource type="Texture2D" uid="uid://cqjvn3jio4lid" path="res://assets/ui/hslider_grabber.png" id="5_s6xnw"]
+[ext_resource type="Texture2D" uid="uid://ddmdvxtkjcq14" path="res://assets/ui/hslider_grabber_highlight.png" id="6_4mjjk"]
+[ext_resource type="Texture2D" uid="uid://7c072xy2xs7e" path="res://assets/ui/hslider_grabber_area.png" id="7_vsimv"]
+[ext_resource type="Texture2D" uid="uid://do5aoj2kswjuk" path="res://assets/ui/hslider_grabber_area_highlight.png" id="8_aaax3"]
+[ext_resource type="Texture2D" uid="uid://dvtcob0ot053a" path="res://assets/ui/hslider_slider.png" id="9_cpxmn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wnfb"]
+texture = ExtResource("7_vsimv")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rikgr"]
+texture = ExtResource("8_aaax3")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_bottom = 16.0
+expand_margin_right = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75jbn"]
+texture = ExtResource("9_cpxmn")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 12.0
+
+[resource]
+GridContainer/constants/h_separation = 16
+GridContainer/constants/v_separation = 16
+HBoxContainer/constants/separation = 16
+HSlider/icons/grabber = ExtResource("5_s6xnw")
+HSlider/icons/grabber_highlight = ExtResource("6_4mjjk")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_7wnfb")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_rikgr")
+HSlider/styles/slider = SubResource("StyleBoxTexture_75jbn")
+Label/colors/font_color = Color(0.211765, 0.454902, 0.709804, 1)
+Label/colors/font_outline_color = Color(0.341176, 0.560784, 0.792157, 1)
+Label/colors/font_shadow_color = Color(0.341176, 0.560784, 0.792157, 1)
+Label/constants/outline_size = 1
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 2
+Label/font_sizes/font_size = 26
+MarginContainer/constants/margin_bottom = 48
+MarginContainer/constants/margin_left = 48
+MarginContainer/constants/margin_right = 48
+MarginContainer/constants/margin_top = 48
+VBoxContainer/constants/separation = 16

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwis5t0v2ekor"]
+
+[ext_resource type="Theme" uid="uid://xift2ikyg4jn" path="res://resources/label_hud.tres" id="1_77fdr"]
+
+[node name="HudLabel" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_77fdr")

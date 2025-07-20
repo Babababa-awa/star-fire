@@ -1,0 +1,313 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd8sa6qbfeo5u"]
+
+[ext_resource type="PackedScene" uid="uid://bbssswrytbmd4" path="res://scenes/ui/component/goto_button.tscn" id="1_75pis"]
+[ext_resource type="Script" uid="uid://b6qs0kxmx7lwu" path="res://scenes/ui/controls.gd" id="1_lrwvo"]
+[ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_qihey"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lrwvo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="TitleLabelCommand" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("2_qihey")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TITLE_COMMAND"
+
+[node name="TitleLabelKeyboard" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("2_qihey")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TITLE_KEYBOARD"
+
+[node name="TitleLabelController" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("2_qihey")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TITLE_CONTROLLER"
+
+[node name="TitleLabelMouse" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("2_qihey")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TITLE_MOUSE"
+
+[node name="LabelMoveLeft" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Move Left"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "A, Left Arrow"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "D-Pad Left, Left Joystick Left"
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "--"
+
+[node name="LabelMoveRight" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Move Right"
+
+[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "D, Right Arrow"
+
+[node name="Label7" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "D-Pad Right, Left Joystick Right"
+
+[node name="Label8" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "--"
+
+[node name="LabelMoveUp" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Move Up"
+
+[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "W, Up Arrow"
+
+[node name="Label10" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "D-Pad Up, Left Joystick Up"
+
+[node name="Label11" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "--"
+
+[node name="LabelMoveDown" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Move Down"
+
+[node name="Label12" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "S, Down Arrow"
+
+[node name="Label13" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "D-Pad Down, Left Joystick Down"
+
+[node name="Label14" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "--"
+
+[node name="LabelMoveFast" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Run"
+
+[node name="Label18" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Hold Shift"
+
+[node name="Label19" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Hold R2"
+
+[node name="Label20" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "--"
+
+[node name="LabelNextItem" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Next Item"
+
+[node name="Label34" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "E, L"
+
+[node name="Label35" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "R1"
+
+[node name="Label36" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Wheel Down"
+
+[node name="LabelPrevItem" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Previous Item"
+
+[node name="Label38" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Q, H"
+
+[node name="Label39" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "L!"
+
+[node name="Label40" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Wheel Up"
+
+[node name="LabelSelect" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Select Item"
+
+[node name="Label49" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "1, 2, 3, 4"
+
+[node name="Label50" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "--"
+
+[node name="Label51" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "--"
+
+[node name="LabelDropItem" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Place Wire"
+
+[node name="Label52" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "C, J, Space, Backspace"
+
+[node name="Label53" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "A Button"
+
+[node name="Label54" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Left Button"
+
+[node name="LabelPickUpItem" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Remove Wire"
+
+[node name="Label33" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "G, K, Delete"
+
+[node name="Label37" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "B Button"
+
+[node name="Label41" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Right Button"
+
+[node name="LabelOrientateItem" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Orientate Component"
+
+[node name="Label55" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "R, H, Enter"
+
+[node name="Label56" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Y Button"
+
+[node name="Label57" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Middle Button"
+
+[node name="LabelInteract" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Press Launch Button"
+
+[node name="Label30" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "F, L, Space, Backspace"
+
+[node name="Label31" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "X Button"
+
+[node name="Label32" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Left Button"
+
+[node name="LabelPause" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Pause"
+
+[node name="Label42" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "P, Esc, F10"
+
+[node name="Label43" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Start Button"
+
+[node name="Label44" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "--"
+
+[node name="Label45" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label46" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label47" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label48" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="GotoButtonParent" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_75pis")]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+goto_ui_id = &"parent"
+text = "BUTTON_OK"

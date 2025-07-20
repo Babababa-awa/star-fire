@@ -1,0 +1,24 @@
+{
+	"alias": "grass",
+	"name": "Grass",
+	"items": [
+		{"alias": "power_button", "position": [2304, 2304], "meta": {"item": {"power_level": 8}}},
+		{"alias": "launcher", "position": [512, 256]},
+		{"alias": "launcher", "position": [1792, 256]},
+		{"alias": "launcher", "position": [2304, 256]},
+		{"alias": "launcher", "position": [3072, 256]},
+		{"alias": "splitter_three", "position": [2816, 1792], "meta": {"item": {"orientation": 4}}},
+		{"alias": "splitter_four", "position": [1280, 2048]},
+		{"alias": "splitter_four", "position": [1280, 256]},
+		{"alias": "splitter_four", "position": [3072, 1024]},
+		{"alias": "resister", "position": [512, 1536], "meta": {"item": {"orientation": 1}}},
+		{"alias": "resister", "position": [512, 1024], "meta": {"item": {"orientation": 1}}},
+		{"alias": "resister", "position": [2304, 0], "meta": {"item": {"orientation": 2}}},
+		{"alias": "resister", "position": [2816, 512], "meta": {"item": {"orientation": 1}}},
+        {"alias": "resister", "position": [3328, 1792], "meta": {"item": {"orientation": 1}}},
+		{"alias": "transformer", "position": [1792, 2560], "meta": {"item": {"orientation": 1}}},
+		{"alias": "diode", "position": [2560, 1280], "meta": {"item": {"orientation": 2}}},
+		{"alias": "diode", "position": [1024, 2816], "meta": {"item": {"orientation": 4}}}
+	],
+	"music": "level"
+}

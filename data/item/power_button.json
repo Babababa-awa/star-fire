@@ -1,0 +1,10 @@
+{
+	"alias": "power_button",
+	"type": "component",
+	"meta": {
+		"can_pick_up": false,
+	},
+	"scene": {
+		"path": "res://scenes/unit/item/power_button.tscn",
+	}
+}

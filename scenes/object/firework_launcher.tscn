@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4kbdxi1727d"]
+
+[sub_resource type="GDScript" id="GDScript_sf8c8"]
+script/source = "extends BaseNode2D
+
+@export var target_position: Vector2 = Vector2.ZERO
+
+var is_launching: bool = false
+var _current_delta: float = 0.0
+
+func reset(reset_type_: Core.ResetType) -> void:
+	if (reset_type_ == Core.ResetType.START or 
+		reset_type_ == Core.ResetType.RESTART
+	):
+		is_launching = false
+		_current_delta = 0.0
+		
+func _process(delta_: float) -> void:
+	if not is_running():
+		return
+	
+	if not is_enabled:
+		return
+		
+	if not is_launching:
+		return
+	
+	if _current_delta == 0.0:
+		Core.audio.play_sfx(&\"launcher\")
+		%Smoke.emitting = true
+	
+	_current_delta += delta_
+	
+	if _current_delta > 1.0:
+		is_launching = false
+		var node = await Core.nodes.get_node(\"res://scenes/unit/projectile/firework.tscn\")
+		node.position = Vector2(-128, 32)
+		node.target_position = target_position
+		
+"
+
+[node name="FireworkLauncher" type="Node2D"]
+script = SubResource("GDScript_sf8c8")

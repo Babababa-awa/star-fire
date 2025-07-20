@@ -1,0 +1,10 @@
+{
+	"alias": "launcher",
+	"type": "component",
+	"meta": {
+		"can_pick_up": false,
+	},
+	"scene": {
+		"path": "res://scenes/unit/item/launcher.tscn",
+	}
+}

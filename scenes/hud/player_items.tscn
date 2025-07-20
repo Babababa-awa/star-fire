@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://celc1gq31jyqs"]
+
+[ext_resource type="Script" uid="uid://cqwgj6led1f3b" path="res://scenes/hud/player_items.gd" id="1_j40rb"]
+[ext_resource type="PackedScene" uid="uid://wb3chxoe4nqn" path="res://scenes/hud/hud_item.tscn" id="2_nvsan"]
+[ext_resource type="PackedScene" uid="uid://cwis5t0v2ekor" path="res://scenes/hud/hud_label.tscn" id="4_coebj"]
+
+[node name="PlayerItems" type="Node2D"]
+script = ExtResource("1_j40rb")
+
+[node name="HudItem1" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+
+[node name="HudItem2" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+slot = 2
+
+[node name="HudItem3" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+slot = 3
+
+[node name="HudItem4" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+slot = 4
+
+[node name="HudItem5" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+slot = 5
+
+[node name="HudItem6" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+slot = 6
+
+[node name="HudItem7" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+slot = 7
+
+[node name="HudItem8" parent="." instance=ExtResource("2_nvsan")]
+unique_name_in_owner = true
+slot = 8
+
+[node name="HudLabelTitle" parent="." instance=ExtResource("4_coebj")]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 177.0
+offset_bottom = 0.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "HUD_ITEMS"
+
+[node name="HudLabelName" parent="." instance=ExtResource("4_coebj")]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -48.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "wasda"
+vertical_alignment = 2

@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://wa88fmt1jifj"]
+
+[ext_resource type="Texture2D" uid="uid://dtsy5vvf51amu" path="res://assets/image/effects/firefly.png" id="1_t4b52"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_opoi0"]
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_4km84"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 0, Vector2(0.0604089, 1), 0.0, 0.0, 0, 0, Vector2(0.94145, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_g2llv"]
+curve = SubResource("Curve_4km84")
+
+[sub_resource type="Gradient" id="Gradient_yhdm5"]
+colors = PackedColorArray(0, 1, 0, 1, 0.835294, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ds5ya"]
+gradient = SubResource("Gradient_yhdm5")
+
+[sub_resource type="Curve" id="Curve_8wfec"]
+_data = [Vector2(0, 0.50047), 0.0, 0.0, 0, 0, Vector2(0.0678439, 1), 0.0, 0.0, 0, 0, Vector2(0.930297, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.503963), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_uurn7"]
+curve = SubResource("Curve_8wfec")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v84ab"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 256.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 0.999998
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_uurn7")
+color_ramp = SubResource("GradientTexture1D_ds5ya")
+alpha_curve = SubResource("CurveTexture_g2llv")
+turbulence_enabled = true
+
+[node name="Fireflies" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_opoi0")
+amount = 15
+texture = ExtResource("1_t4b52")
+lifetime = 50.0
+visibility_rect = Rect2(-256, -256, 512, 512)
+process_material = SubResource("ParticleProcessMaterial_v84ab")

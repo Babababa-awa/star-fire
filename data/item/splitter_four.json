@@ -1,0 +1,10 @@
+{
+	"alias": "splitter_four",
+	"type": "component",
+	"meta": {
+		"can_pick_up": false,
+	},
+	"scene": {
+		"path": "res://scenes/unit/item/splitter_four.tscn",
+	}
+}

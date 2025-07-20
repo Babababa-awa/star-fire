@@ -1,0 +1,72 @@
+[gd_scene load_steps=16 format=3 uid="uid://h462wqad38r7"]
+
+[ext_resource type="Script" uid="uid://bgn6vg2aq8v6x" path="res://scenes/game.gd" id="1_fra1q"]
+[ext_resource type="PackedScene" uid="uid://c18xx1wuw4jhb" path="res://scenes/control/target_camera_2d.tscn" id="2_ee3hm"]
+[ext_resource type="PackedScene" uid="uid://coyy4gorpq7c6" path="res://scenes/ui/menu.tscn" id="2_s5d2x"]
+[ext_resource type="PackedScene" uid="uid://u14wwf0sx80p" path="res://scenes/object/component/player_grid.tscn" id="3_ir15t"]
+[ext_resource type="PackedScene" uid="uid://bbfew1a1w6f3" path="res://scenes/ambience/day_night_cycle.tscn" id="3_trtic"]
+[ext_resource type="PackedScene" uid="uid://ctd1pmydxlt1t" path="res://scenes/ui/pause.tscn" id="3_x527k"]
+[ext_resource type="PackedScene" uid="uid://bd8sa6qbfeo5u" path="res://scenes/ui/controls.tscn" id="4_e62tl"]
+[ext_resource type="PackedScene" uid="uid://cf5cmnwig2y7m" path="res://scenes/ui/win.tscn" id="5_0ykbg"]
+[ext_resource type="PackedScene" uid="uid://ctk8l2uxc2tbe" path="res://scenes/ui/settings.tscn" id="6_tx01e"]
+[ext_resource type="PackedScene" uid="uid://lw2yes78jsio" path="res://scenes/ui/difficulty.tscn" id="7_oqvsp"]
+[ext_resource type="PackedScene" uid="uid://bdqsnaph7j08w" path="res://scenes/hud.tscn" id="8_2scf5"]
+[ext_resource type="PackedScene" uid="uid://bfvi5kylfkrhr" path="res://scenes/ui/lose.tscn" id="8_jclbl"]
+[ext_resource type="PackedScene" uid="uid://3bia3w2lcryp" path="res://scenes/ui/level_select.tscn" id="9_kvuet"]
+[ext_resource type="PackedScene" uid="uid://35sqtt83sll6" path="res://scenes/ui/credits.tscn" id="9_trtic"]
+[ext_resource type="PackedScene" uid="uid://bjnti3ijf6sjb" path="res://scenes/ui/loading.tscn" id="10_kr2w2"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_fra1q")
+
+[node name="Ambience" type="Node2D" parent="."]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Camera" parent="Level" instance=ExtResource("2_ee3hm")]
+unique_name_in_owner = true
+zoom = Vector2(1.75, 1.75)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="PlayerGrid" parent="Level" instance=ExtResource("3_ir15t")]
+unique_name_in_owner = true
+
+[node name="DayNightCycle" parent="Level" instance=ExtResource("3_trtic")]
+unique_name_in_owner = true
+pause_time = true
+time_ratio = 2.0
+initial_hour = 20
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="UI" instance=ExtResource("8_2scf5")]
+visible = false
+
+[node name="Menu" parent="UI" instance=ExtResource("2_s5d2x")]
+
+[node name="Controls" parent="UI" instance=ExtResource("4_e62tl")]
+visible = false
+
+[node name="Settings" parent="UI" instance=ExtResource("6_tx01e")]
+visible = false
+
+[node name="Credits" parent="UI" instance=ExtResource("9_trtic")]
+visible = false
+
+[node name="Difficulty" parent="UI" instance=ExtResource("7_oqvsp")]
+visible = false
+
+[node name="LevelSelect" parent="UI" instance=ExtResource("9_kvuet")]
+visible = false
+
+[node name="Win" parent="UI" instance=ExtResource("5_0ykbg")]
+visible = false
+
+[node name="Lose" parent="UI" instance=ExtResource("8_jclbl")]
+visible = false
+
+[node name="Pause" parent="UI" instance=ExtResource("3_x527k")]
+visible = false
+
+[node name="Loading" parent="UI" instance=ExtResource("10_kr2w2")]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://baaxuk7aspal7"]
+
+[ext_resource type="Script" uid="uid://uiludctphgba" path="res://scenes/unit/projectile/firework.gd" id="1_hc7ey"]
+[ext_resource type="PackedScene" uid="uid://bvfx7upqeluna" path="res://scenes/effect/particle/fire.tscn" id="2_7bqk3"]
+[ext_resource type="TileSet" uid="uid://dcmttadq5d0it" path="res://resources/unit/item/fireworks.tres" id="2_qwpr8"]
+[ext_resource type="PackedScene" uid="uid://cr28w1uu3bwxq" path="res://scenes/effect/particle/firework.tscn" id="2_tbe70"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k8yhp"]
+light_mode = 1
+
+[node name="Firework" type="CharacterBody2D"]
+z_index = 29
+z_as_relative = false
+script = ExtResource("1_hc7ey")
+
+[node name="Fire" parent="." instance=ExtResource("2_7bqk3")]
+unique_name_in_owner = true
+position = Vector2(0, 32)
+
+[node name="Ordinance" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+position = Vector2(-128, -224)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0)
+tile_set = ExtResource("2_qwpr8")
+
+[node name="Firework" parent="." instance=ExtResource("2_tbe70")]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_k8yhp")

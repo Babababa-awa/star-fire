@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgu5ixparg3e2"]
+
+[ext_resource type="Script" uid="uid://dmjs1hh7fq3ip" path="res://scenes/unit/item/transformer.gd" id="1_jfpdg"]
+[ext_resource type="TileSet" uid="uid://dqx6jkj8wpoka" path="res://resources/unit/item/items.tres" id="2_tpto2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfpdg"]
+size = Vector2(256, 256)
+
+[node name="Transformer" type="CharacterBody2D"]
+z_index = 13
+z_as_relative = false
+collision_layer = 131072
+script = ExtResource("1_jfpdg")
+
+[node name="Component" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 7, 0, 5, 0, 0, 0)
+tile_set = ExtResource("2_tpto2")
+
+[node name="ConnectionTop" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_tpto2")
+
+[node name="ConnectionBottom" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_tpto2")
+
+[node name="ConnectionLeft" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_tpto2")
+
+[node name="ConnectionRight" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_tpto2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(128, 128)
+shape = SubResource("RectangleShape2D_jfpdg")

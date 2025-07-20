@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://lw2yes78jsio"]
+
+[ext_resource type="Script" uid="uid://bmpuuhf6pv8e1" path="res://scenes/ui/difficulty.gd" id="1_blgml"]
+[ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_t47ip"]
+[ext_resource type="PackedScene" uid="uid://bbssswrytbmd4" path="res://scenes/ui/component/goto_button.tscn" id="3_8m16a"]
+
+[node name="Difficulty" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_blgml")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TitleLabel" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_t47ip")]
+layout_mode = 2
+text = "TITLE_DIFFICULTY"
+horizontal_alignment = 1
+
+[node name="SeparatorHeader" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="ButtonEasy" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_8m16a")]
+layout_mode = 2
+size_flags_horizontal = 4
+goto_ui_id = &"level_select"
+text = "DIFFICULTY_EASY"
+
+[node name="ButtonNormal" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_8m16a")]
+layout_mode = 2
+size_flags_horizontal = 4
+goto_ui_id = &"level_select"
+text = "DIFFICULTY_NORMAL"
+
+[node name="ButtonHard" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_8m16a")]
+layout_mode = 2
+size_flags_horizontal = 4
+goto_ui_id = &"level_select"
+text = "DIFFICULTY_HARD"
+
+[node name="SeparatorFooter" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GotoButtonParent" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_8m16a")]
+layout_mode = 2
+size_flags_horizontal = 4
+goto_ui_id = &"parent"
+text = "BUTTON_BACK"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonEasy" to="." method="_on_button_easy_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonNormal" to="." method="_on_button_normal_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonHard" to="." method="_on_button_hard_pressed"]

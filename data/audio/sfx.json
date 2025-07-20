@@ -1,0 +1,37 @@
+{
+	"button_entered": {
+		"format": "wav",
+		"count": 7,
+		"rand": true,
+		"pitch": true
+	},
+	"button_exited": {
+		"count": 0,
+	},
+	"button_pressed": {
+		"format": "wav",
+		"count": 8,
+		"rand": true,
+		"pitch": false
+	},
+	"exit": {
+		"format": "wav",
+		"count": 3,
+		"rand": true,
+		"pitch": false
+	},
+	"firework": {
+		"format": "wav",
+		"pitch": true,
+	},
+	"launcher": {
+		"format": "wav",
+		"pitch": true,
+	},
+	"whistle": {
+		"format": "wav",
+		"count": 2,
+		"rand": false,
+		"pitch": true,
+	}
+}

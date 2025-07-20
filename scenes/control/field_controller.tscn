@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0634wtg2tqkx"]
+
+[ext_resource type="Script" uid="uid://l378omns05dn" path="res://scenes/control/field_controller.gd" id="1_11eip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7604"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa88a"]
+resource_local_to_scene = true
+size = Vector2(0.5, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lshqq"]
+resource_local_to_scene = true
+size = Vector2(0.5, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlrdf"]
+resource_local_to_scene = true
+size = Vector2(8, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5psr"]
+resource_local_to_scene = true
+size = Vector2(8, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r33g"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3s8g7"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[node name="FieldController" type="Node2D"]
+script = ExtResource("1_11eip")
+
+[node name="Area2DField" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DField"]
+shape = SubResource("RectangleShape2D_c7604")
+
+[node name="Area2DFieldLeft" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFieldLeft"]
+position = Vector2(-4.5, 0)
+shape = SubResource("RectangleShape2D_xa88a")
+
+[node name="Area2DFieldRight" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFieldRight"]
+position = Vector2(4.5, 0)
+shape = SubResource("RectangleShape2D_lshqq")
+
+[node name="Area2DFieldUp" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFieldUp"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_vlrdf")
+
+[node name="Area2DFieldDown" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DFieldDown"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_a5psr")
+
+[node name="Area2DMove" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DMove"]
+shape = SubResource("RectangleShape2D_4r33g")
+
+[node name="Area2DSpeed" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DSpeed"]
+shape = SubResource("RectangleShape2D_3s8g7")
+
+[connection signal="body_entered" from="Area2DField" to="." method="_on_area_2d_field_body_entered"]
+[connection signal="body_exited" from="Area2DField" to="." method="_on_area_2d_field_body_exited"]
+[connection signal="body_entered" from="Area2DFieldLeft" to="." method="_on_area_2d_field_left_body_entered"]
+[connection signal="body_exited" from="Area2DFieldLeft" to="." method="_on_area_2d_field_left_body_exited"]
+[connection signal="body_entered" from="Area2DFieldRight" to="." method="_on_area_2d_field_right_body_entered"]
+[connection signal="body_exited" from="Area2DFieldRight" to="." method="_on_area_2d_field_right_body_exited"]
+[connection signal="body_entered" from="Area2DFieldUp" to="." method="_on_area_2d_field_up_body_entered"]
+[connection signal="body_exited" from="Area2DFieldUp" to="." method="_on_area_2d_field_up_body_exited"]
+[connection signal="body_entered" from="Area2DFieldDown" to="." method="_on_area_2d_field_down_body_entered"]
+[connection signal="body_exited" from="Area2DFieldDown" to="." method="_on_area_2d_field_down_body_exited"]
+[connection signal="body_entered" from="Area2DMove" to="." method="_on_area_2d_move_body_entered"]
+[connection signal="body_exited" from="Area2DMove" to="." method="_on_area_2d_move_body_exited"]
+[connection signal="body_entered" from="Area2DSpeed" to="." method="_on_area_2d_speed_body_entered"]
+[connection signal="body_exited" from="Area2DSpeed" to="." method="_on_area_2d_speed_body_exited"]

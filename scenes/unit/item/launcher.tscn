@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1jggeqwx4u26"]
+
+[ext_resource type="Script" uid="uid://blxetengregk0" path="res://scenes/unit/item/launcher.gd" id="1_jw1e5"]
+[ext_resource type="TileSet" uid="uid://dqx6jkj8wpoka" path="res://resources/unit/item/items.tres" id="2_s5qsq"]
+[ext_resource type="TileSet" uid="uid://dcmttadq5d0it" path="res://resources/unit/item/fireworks.tres" id="3_bxyn6"]
+[ext_resource type="PackedScene" uid="uid://cj0m2h0btwpra" path="res://scenes/effect/particle/smoke.tscn" id="4_6hvx6"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6hvx6"]
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1e5"]
+size = Vector2(256, 256)
+
+[node name="Launcher" type="CharacterBody2D"]
+z_index = 13
+z_as_relative = false
+collision_layer = 131072
+script = ExtResource("1_jw1e5")
+
+[node name="Component" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+tile_set = ExtResource("2_s5qsq")
+
+[node name="Connection" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_s5qsq")
+
+[node name="PowerBar" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
+tile_set = ExtResource("2_s5qsq")
+
+[node name="PowerLights" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_6hvx6")
+tile_set = ExtResource("2_s5qsq")
+
+[node name="Firework" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("3_bxyn6")
+
+[node name="Smoke" parent="." instance=ExtResource("4_6hvx6")]
+unique_name_in_owner = true
+position = Vector2(128, 108)
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(128, 128)
+shape = SubResource("RectangleShape2D_jw1e5")

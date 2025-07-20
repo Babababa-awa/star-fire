@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck7erckqy66nt"]
+
+[ext_resource type="Theme" uid="uid://daaa682u5nc8k" path="res://resources/label_title.tres" id="1_mblq1"]
+
+[node name="TitleLabel" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_mblq1")

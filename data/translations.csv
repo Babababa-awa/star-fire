@@ -1,0 +1,54 @@
+Key,en,jp
+BUTTON_START,Start,スタート
+BUTTON_SETTINGS,Settings,ゲーム設定
+BUTTON_CONTROLS,Controls,操作設定
+BUTTON_EXIT,Exit Game,ゲーム終了
+BUTTON_BACK,Go Back,戻る
+BUTTON_CONTINUE,Continue Playing,ゲーム再開
+BUTTON_RESTART,Restart Level,レベルをやり直す
+BUTTON_OK,OK,オーケー
+BUTTON_MENU,Stop Playing,ゲーム終了
+BUTTON_REPLAY,Play Again,もう一度プレイ
+BUTTON_REPLAY_NORMAL,Play Again on Normal,普通でまたプレイ
+BUTTON_REPLAY_HARD,Play Again on Hard,難しいでまたプレイ
+BUTTON_RETRY,Try Again,もう一度挑戦
+BUTTON_RETRY_EASY,Try Again as a Journalist,普通でもう一度挑戦
+BUTTON_RETRY_NORMAL,Try Again on Normal,難しいでもう一度挑戦
+BUTTON_LOCALE:en,English,English
+BUTTON_LOCALE:jp,日本語,日本語
+BUTTON_CREDITS,Credits,クレジット
+BUTTON_NEXT_LEVEL,Next Level,次のレベル
+BUTTON_SKIP_LEVEL,Skip Level,レベルをスキップ
+BUTTON_LEVEL_SELECT,Select Level,レベル選択
+TITLE_SETTINGS,Settings,ゲーム設定
+TITLE_COMMAND,Command,コマンド
+TITLE_KEYBOARD,Keyboard,キーボード
+TITLE_MOUSE,Mouse,マウス
+TITLE_CONTROLLER,Controller,コントローラー
+TITLE_PAUSED,Paused,一時停止
+TITLE_WIN,You Did It!,やったね！
+TITLE_LOSE,You Failed,失敗した！
+TITLE_DIFFICULTY,Select Difficulty,難易度選択
+TITLE_LEVEL_SELECT,Select Level,レベル選択
+TITLE_ROLE,Role,担当
+TITLE_NAME,Name,名前
+DIFFICULTY_EASY,Journalist,ジャーナリスト
+DIFFICULTY_NORMAL,Normal,普通
+DIFFICULTY_HARD,Hard,難しい
+LABEL_MASTER,Master,マスター
+LABEL_MUSIC,Music,音楽
+LABEL_SFX,SFX,効果音
+LABEL_AMBIENCE,Ambience,環境音
+LABEL_TIME,Play Time:,プレイ時間：
+HUD_ITEMS,Items,アイテム
+HUD_HUNGER,Hunger,飢え
+HUD_HEALTH,Anxiety,不安
+ITEM:breaker,Breaker,ブレーカー
+ITEM:ground,Ground,アース
+ITEM:launcher,Launcher,発射装置
+ITEM:power_button,Power Button,電源ボタン
+ITEM:resister,Resister,抵抗
+ITEM:splitter_three,Three Pronged Splitter,三方向スプリッター
+ITEM:splitter_four,Four Pronged Splitter,四方向スプリッター
+ITEM:transformer,Transformer,変圧器
+ITEM:wire,Wire,ワイヤー

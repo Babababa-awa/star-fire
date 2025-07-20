@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://wb3chxoe4nqn"]
+
+[ext_resource type="Script" uid="uid://ba3c3g3pp1f4v" path="res://scenes/hud/hud_item.gd" id="1_krw25"]
+[ext_resource type="TileSet" uid="uid://c4mu0hnsa81v8" path="res://resources/hud/hud_item_box.tres" id="2_r1341"]
+[ext_resource type="PackedScene" uid="uid://cwis5t0v2ekor" path="res://scenes/hud/hud_label.tscn" id="3_o67lh"]
+
+[node name="HudItem" type="Node2D"]
+script = ExtResource("1_krw25")
+
+[node name="ItemUnder" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_r1341")
+
+[node name="ItemOver" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_r1341")
+
+[node name="HudLabelSlot" parent="." instance=ExtResource("3_o67lh")]
+unique_name_in_owner = true
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HudLabelCount" parent="." instance=ExtResource("3_o67lh")]
+unique_name_in_owner = true
+size_flags_horizontal = 8
+size_flags_vertical = 8
+horizontal_alignment = 2

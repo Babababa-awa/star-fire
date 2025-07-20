@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwxpbmq0v13du"]
+
+[ext_resource type="Script" uid="uid://17t2cjwuhngv" path="res://scenes/unit/item/ground.gd" id="1_oxnk6"]
+[ext_resource type="TileSet" uid="uid://dqx6jkj8wpoka" path="res://resources/unit/item/items.tres" id="2_re4q5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_re4q5"]
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxnk6"]
+size = Vector2(256, 256)
+
+[node name="Ground" type="CharacterBody2D"]
+z_index = 13
+z_as_relative = false
+collision_layer = 131072
+collision_mask = 0
+script = ExtResource("1_oxnk6")
+
+[node name="Component" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 1, 0, 0, 0)
+tile_set = ExtResource("2_re4q5")
+
+[node name="Connection" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_re4q5")
+
+[node name="Symbol" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 2, 0, 0, 0)
+tile_set = ExtResource("2_re4q5")
+
+[node name="PowerBar" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 4, 0, 0, 0)
+tile_set = ExtResource("2_re4q5")
+
+[node name="PowerLights" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_re4q5")
+tile_set = ExtResource("2_re4q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(128, 128)
+shape = SubResource("RectangleShape2D_oxnk6")

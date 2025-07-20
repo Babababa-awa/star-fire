@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdqsnaph7j08w"]
+
+[ext_resource type="Script" uid="uid://coh7xi2e66jry" path="res://scenes/hud.gd" id="1_asei3"]
+[ext_resource type="PackedScene" uid="uid://celc1gq31jyqs" path="res://scenes/hud/player_items.tscn" id="4_yb3k7"]
+
+[node name="Hud" type="Node2D"]
+script = ExtResource("1_asei3")
+
+[node name="PlayerItems" parent="." instance=ExtResource("4_yb3k7")]
+unique_name_in_owner = true
+visible = false
+show_title_label = false
+show_slot_labels = false
+item_scale = Vector2(0.25, 0.25)
+label_offset = Vector2(8, 8)
+item_label_offset = Vector2(24, 22)

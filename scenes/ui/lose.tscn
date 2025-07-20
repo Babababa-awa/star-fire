@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfvi5kylfkrhr"]
+
+[ext_resource type="Script" uid="uid://d0iefuolgkyx7" path="res://scenes/ui/lose.gd" id="1_accp8"]
+[ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_hvyql"]
+[ext_resource type="PackedScene" uid="uid://bbssswrytbmd4" path="res://scenes/ui/component/goto_button.tscn" id="2_qxb8d"]
+
+[node name="Lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_accp8")
+ui_type = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="TitleLabel" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_hvyql")]
+layout_mode = 2
+text = "TITLE_LOSE"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="LabelTimeTitle" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "LABEL_TIME"
+horizontal_alignment = 2
+
+[node name="LabelTimeValue" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SeparatorHeader" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="ButtonTryAgain" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_qxb8d")]
+layout_mode = 2
+text = "BUTTON_RETRY"
+
+[node name="ButtonTryAgainEasy" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_qxb8d")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BUTTON_RETRY_EASY"
+
+[node name="ButtonTryAgainNormal" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_qxb8d")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BUTTON_RETRY_NORMAL"
+
+[node name="SeparatorFooter" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GotoButtonMenu" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_qxb8d")]
+layout_mode = 2
+goto_ui_id = &"menu"
+text = "BUTTON_MENU"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonTryAgain" to="." method="_on_button_try_again_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonTryAgainEasy" to="." method="_on_button_try_again_easy_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonTryAgainNormal" to="." method="_on_button_try_again_normal_pressed"]

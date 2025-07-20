@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctk8l2uxc2tbe"]
+
+[ext_resource type="PackedScene" uid="uid://bbssswrytbmd4" path="res://scenes/ui/component/goto_button.tscn" id="1_2i5ca"]
+[ext_resource type="Script" uid="uid://0mcyqaxh2jhv" path="res://scenes/ui/settings.gd" id="1_wci7f"]
+[ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_k8v3m"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wci7f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LabelTitle" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_k8v3m")]
+layout_mode = 2
+text = "TITLE_SETTINGS"
+horizontal_alignment = 1
+
+[node name="SeparatorHeader" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="LabelMaster" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "LABEL_MASTER"
+horizontal_alignment = 2
+
+[node name="HSliderMaster" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="LabelMusic" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "LABEL_MUSIC"
+horizontal_alignment = 2
+
+[node name="HSliderMusic" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="LabelSFX" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "LABEL_SFX"
+horizontal_alignment = 2
+
+[node name="HSliderSFX" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="LabelAmbience" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "LABEL_AMBIENCE"
+horizontal_alignment = 2
+
+[node name="HSliderAmbience" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="SeparatorFoooter" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="GotoButtonParent" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_2i5ca")]
+layout_mode = 2
+goto_ui_id = &"parent"
+text = "BUTTON_OK"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSliderMaster" to="." method="_on_h_slider_master_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSliderMusic" to="." method="_on_h_slider_music_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSliderSFX" to="." method="_on_h_slider_sfx_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSliderAmbience" to="." method="_on_h_slider_ambience_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GotoButtonParent" to="." method="_on_goto_button_parent_pressed"]

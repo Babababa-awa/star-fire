@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://35sqtt83sll6"]
+
+[ext_resource type="Script" uid="uid://clnqvgyyrh7ie" path="res://scenes/ui/credits.gd" id="1_oap8i"]
+[ext_resource type="PackedScene" uid="uid://ck7erckqy66nt" path="res://scenes/ui/component/title_label.tscn" id="2_pqmjv"]
+[ext_resource type="PackedScene" uid="uid://bbssswrytbmd4" path="res://scenes/ui/component/goto_button.tscn" id="3_e5ls7"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oap8i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="TitleLabelRole" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("2_pqmjv")]
+layout_mode = 2
+text = "TITLE_ROLE"
+
+[node name="TitleLabelName" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("2_pqmjv")]
+layout_mode = 2
+text = "TITLE_NAME"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Programming"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Babababa"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Jelly Sprite"
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Awa+Anon"
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Graphics"
+
+[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Babababa, Robert Brooks"
+
+[node name="Label7" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="Label8" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "蒲鉾さちこ"
+
+[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Special Thanks"
+
+[node name="Label10" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Jordan"
+
+[node name="GotoButtonParent" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_e5ls7")]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+goto_ui_id = &"parent"
+text = "BUTTON_OK"

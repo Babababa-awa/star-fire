@@ -1,0 +1,15 @@
+{
+	"type": "platformer",
+	"area": {
+		"alias": "grass",
+	},
+	"player": {
+		"alias": "jelly",
+		"position": [2176, 2432],
+		"mode": "normal",
+		"physics": "plane",
+		"items": [
+			{"alias": "wire", "count": -1}
+		]
+	}
+}

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://u14wwf0sx80p"]
+
+[ext_resource type="Texture2D" uid="uid://dfukysn17k6sk" path="res://assets/image/object/player_grid.png" id="1_s41ek"]
+[ext_resource type="Script" uid="uid://c2ixwwfgiihl" path="res://scenes/object/component/player_grid.gd" id="1_yxwb0"]
+[ext_resource type="Shader" uid="uid://b1dpv6by3t5ac" path="res://scenes/object/component/player_grid.gdshader" id="2_xwbh0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mi4pj"]
+shader = ExtResource("2_xwbh0")
+shader_parameter/position_x = 0.5
+shader_parameter/position_y = 0.5
+shader_parameter/radius = 0.3
+shader_parameter/feather = 0.2
+
+[node name="PlayerGrid" type="Node2D"]
+z_index = 15
+z_as_relative = false
+script = ExtResource("1_yxwb0")
+
+[node name="Sprite2DGrid" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_mi4pj")
+texture = ExtResource("1_s41ek")

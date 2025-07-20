@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=4 uid="uid://b0lc2uol0wfyh"]
+
+[ext_resource type="Script" uid="uid://ctquws2povaot" path="res://scenes/object/speech/speech_bubble.gd" id="1_yfgyx"]
+[ext_resource type="TileSet" uid="uid://dv5pimhivkci6" path="res://resources/game/speech_bubble.tres" id="2_wh36n"]
+
+[node name="SpeechBubble" type="Node2D"]
+script = ExtResource("1_yfgyx")
+
+[node name="SpeechBubble" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAAAAAIAAAAAAAIAAAACAAIAAAACAAIAAAABAAIAAAABAAQAAAA=")
+tile_set = ExtResource("2_wh36n")
+
+[node name="SpeechLabel" type="Label" parent="SpeechBubble"]
+unique_name_in_owner = true
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 68.0
+offset_bottom = 68.0
+theme_override_constants/line_spacing = -4
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
