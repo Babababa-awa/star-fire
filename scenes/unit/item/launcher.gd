@@ -26,6 +26,8 @@ func reset(reset_type_: Core.ResetType) -> void:
 		left_edge = false
 		right_edge = false
 		
+		power_level = 0
+		
 		is_launching = false
 		_current_delta = 0.0
 

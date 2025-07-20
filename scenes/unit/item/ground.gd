@@ -15,6 +15,8 @@ func reset(reset_type_: Core.ResetType) -> void:
 		bottom_edge = true
 		left_edge = false
 		right_edge = false
+		
+		power_level = 0
 			
 		_update_from_meta()
 

@@ -68,7 +68,7 @@ func _process(delta_: float) -> void:
 			level_item_value_.node.orientate()
 			Core.level.power_grid.update_power_levels()
 	elif interact.is_interacting:
-		Core.level.win()
+		#Core.level.win()
 		var coords: Vector2i = (global_position / Core.TILE_SIZE).floor()
 		var level_item_value_: LevelItemValue = Core.level.power_grid.get_component(coords)
 		if level_item_value_ != null and level_item_value_.item.alias == &"power_button":
