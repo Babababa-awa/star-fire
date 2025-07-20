@@ -1,11 +1,11 @@
 {
 	"type": "platformer",
 	"area": {
-		"alias": "grass",
+		"alias": "grass"
 	},
 	"player": {
 		"alias": "jelly",
-		"position": [2176, 2432],
+		"position": [4736, 3456],
 		"mode": "normal",
 		"physics": "plane",
 		"items": [

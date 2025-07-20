@@ -234,6 +234,10 @@ func _get_connected_neighbors(
 			outputs_ += 1
 	else:
 		outputs_ = 1
+		
+	if coords_ == Vector2i(13, 5):
+		print(outputs_)
+		print(power_level_)
 	
 	if outputs_ == 0:
 		return neighbors

@@ -9,7 +9,7 @@
 		{"alias": "resister", "position": [2048, 1536], "meta": {"item": {"orientation": 2}}},
 		{"alias": "resister", "position": [2048, 2048], "meta": {"item": {"orientation": 2}}},
 		{"alias": "resister", "position": [0, 1280], "meta": {"item": {"orientation": 1}}},
-		{"alias": "resister", "position": [512, 0], "meta": {"item": {"orientation": 2}}},
+		{"alias": "resister", "position": [768, 0], "meta": {"item": {"orientation": 2}}},
 		{"alias": "resister", "position": [2816, 512], "meta": {"item": {"orientation": 2}}},
         {"alias": "transformer", "position": [1024, 2048], "meta": {"item": {"orientation": 2}}},
         {"alias": "transformer", "position": [256, 1280], "meta": {"item": {"orientation": 1}}},

@@ -44,7 +44,7 @@ const MENU_CAMERA_ZOOM: float = 0.5
 const MENU_CAMERA_TARGET_OFFSET: Vector2 = Vector2(16 * TILE_SIZE, -TILE_SIZE * 7.5)
 #const MENU_CAMERA_TARGET_OFFSET: Vector2 = Vector2(16 * TILE_SIZE, -TILE_SIZE )
 
-const LEVEL_CAMERA_ZOOM: float = 0.75
+const LEVEL_CAMERA_ZOOM: float = 0.65
 const LEVEL_CAMERA_TARGET_OFFSET: Vector2 = Vector2(0, -TILE_SIZE / 2)
 
 const MIN_AUDIO_PITCH: float = 0.9
