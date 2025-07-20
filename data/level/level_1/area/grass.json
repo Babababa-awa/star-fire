@@ -3,7 +3,7 @@
 	"name": "Grass",
 	"items": [
 		{"alias": "power_button", "position": [768, 1024]},
-		{"alias": "launcher", "position": [768, 0]},
+		{"alias": "launcher", "position": [768, 0], "meta": {"item": {"target_position": [896, -1280], "color": [1.0, 1.0, 0.0]}}}
 	],
-	"music": "level",
+	"music": "level"
 }

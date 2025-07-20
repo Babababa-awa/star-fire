@@ -4,6 +4,7 @@ extends ItemComponentUnit
 @export var color: Color = Color(1.0, 0.0, 0.0)
 @export_enum("Normal") var firework_style: String = "Normal"
 
+var _launch_delay: float = 0.0
 var is_launching: bool = false
 var _current_delta: float = 0.0
 
@@ -27,14 +28,27 @@ func reset(reset_type_: Core.ResetType) -> void:
 		
 		is_launching = false
 		_current_delta = 0.0
+
+func set_item_meta(meta_: Dictionary) -> void:
+	super.set_item_meta(meta_)
+	
+	if item_meta.has("target_position"):
+		target_position = Vector2(item_meta.target_position[0], item_meta.target_position[1])
+	
+	if item_meta.has("color"):
+		color = Color(item_meta.color[0], item_meta.color[1], item_meta.color[2])
 		
 func _process(delta_: float) -> void:
 	super._process(delta_)
-	
+
 	if not is_running():
 		return
-	
+
 	if not is_launching:
+		return
+		
+	if _launch_delay > 0.0:
+		_launch_delay -= delta_
 		return
 	
 	if _current_delta == 0.0:
@@ -50,7 +64,8 @@ func _process(delta_: float) -> void:
 		node.target_position = target_position
 		node.set_color(color)
 		
-func launch() -> void:
+func launch(delay: float = 0.0) -> void:
+	_launch_delay = delay
 	_current_delta = 0.0
 	is_launching = true
 		

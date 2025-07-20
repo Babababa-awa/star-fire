@@ -11,6 +11,9 @@ var turn_speed: float = 360.0
 func _ready() -> void:
 	super._ready()
 	
+	if %Firework.process_material:
+		%Firework.process_material = %Firework.process_material.duplicate()
+	
 	%Firework.finished.connect(_on_firework_finished)
 
 func _on_firework_finished() -> void:

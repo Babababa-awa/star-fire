@@ -3,9 +3,9 @@
 	"name": "Grass",
 	"items": [
 		{"alias": "power_button", "position": [1280, 1024], "meta": {"item": {"power_level": 2}}},
-		{"alias": "launcher", "position": [768, 0]},
-		{"alias": "launcher", "position": [1792, 0]},
-		{"alias": "splitter_three", "position": [1280, 512], "meta": {"item": {"orientation": 1}}},
+		{"alias": "launcher", "position": [768, 0], "meta": {"item": {"target_position": [896, -1280], "color": [1.0, 1.0, 0.0]}}},
+		{"alias": "launcher", "position": [1792, 0], "meta": {"item": {"target_position": [1920, -1280], "color": [0.0, 1.0, 1.0]}}},
+		{"alias": "splitter_three", "position": [1280, 512], "meta": {"item": {"orientation": 1}}}
 	],
-	"music": "level",
+	"music": "level"
 }

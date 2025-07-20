@@ -3,8 +3,8 @@
 	"name": "Grass",
 	"items": [
 		{"alias": "power_button", "position": [1792, 2560], "meta": {"item": {"power_level": 7}}},
-		{"alias": "launcher", "position": [1024, 0]},
-		{"alias": "launcher", "position": [2560, 0]},
+		{"alias": "launcher", "position": [1024, 0], "meta": {"item": {"target_position": [1664, -1280], "color": [1.0, 1.0, 1.0]}}},
+		{"alias": "launcher", "position": [2560, 0], "meta": {"item": {"target_position": [2176, -1280], "color": [1.0, 1.0, 1.0]}}},
 		{"alias": "splitter_four", "position": [1792, 512]},
         {"alias": "splitter_four", "position": [1792, 1536]},
 		{"alias": "transformer", "position": [2816, 2816], "meta": {"item": {"orientation": 2}}},

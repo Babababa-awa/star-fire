@@ -21,6 +21,7 @@ signal time_tick(day: int, hour: int, minute: int)
 			_recalculate_time()
 
 var time: float = 0.0
+var _goto_night: bool = false
 
 var past_day: int = -1
 var past_hour: int = -1
@@ -36,13 +37,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not Core.game.is_enabled:
 		return
+	
+	if _goto_night:
+		if past_hour >= 20 or past_hour <= 4:
+			_goto_night = false
 		
 	if pause_time:
 		return
-		
-	time += delta * GAME_TO_REAL_MINUTE_DURATION * time_ratio
+	
+	var current_time_ratio = time_ratio
+	
+	if _goto_night:
+		var diff: int = 20 - past_hour
+		if diff > 0:
+			current_time_ratio = 600
+	
+	time += delta * GAME_TO_REAL_MINUTE_DURATION * current_time_ratio
 	_update_color()
 	_recalculate_time()
+	
+	#if _goto_night != -1 and past_hour == _goto_hour:
+		#_goto_hour = -1
+	
+func goto_night() -> void:
+	_goto_night = true
 
 func _update_color() -> void:
 	var value = (sin(time - PI / 2.0) + 1.0) / 2.0

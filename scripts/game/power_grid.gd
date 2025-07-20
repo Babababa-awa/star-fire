@@ -58,10 +58,26 @@ func can_launch() -> bool:
 			if get_power_level(cell_.coords) != 1:
 				return false
 		elif cell_.item.item.alias == &"ground":
-			if get_power_level(cell_.coords) != 1:
+			if get_power_level(cell_.coords) > 1:
 				return false
 	
 	return true
+	
+func launch() -> void:
+	for cell_ in grid:
+		if cell_.item.item.alias == &"launcher":
+			cell_.item.node.launch()
+			
+func launch_view_position() -> Vector2:
+	var launch_view_position_ = Vector2.ZERO
+	var count_: int = 0
+	
+	for cell_ in grid:
+		if cell_.item.item.alias == &"launcher":
+			launch_view_position_ += cell_.item.node.target_position
+			count_ += 1
+	
+	return launch_view_position_ / count_
 	
 func get_power_level(coords: Vector2i) -> int:
 	var item_ = get_component(coords)
@@ -235,9 +251,9 @@ func _get_connected_neighbors(
 	else:
 		outputs_ = 1
 		
-	if coords_ == Vector2i(13, 5):
-		print(outputs_)
-		print(power_level_)
+	#if coords_ == Vector2i(13, 5):
+		#print(outputs_)
+		#print(power_level_)
 	
 	if outputs_ == 0:
 		return neighbors

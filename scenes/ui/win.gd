@@ -19,11 +19,13 @@ func show_ui():
 
 func _update_button_visibility() -> void:
 	if Core.ENABLE_LEVEL_SELECT:
+		%GotoButtonLevelSelect.visible = true
 		if Core.level != null and Core.level_select.has_next_level(Core.level.alias):
 			%GotoButtonNextLevel.visible = true
 		else:
 			%GotoButtonNextLevel.visible = false
 	else:
+		%GotoButtonLevelSelect.visible = false
 		%GotoButtonNextLevel.visible = false
 	
 	if Core.ENABLE_PLAY_AGAIN:

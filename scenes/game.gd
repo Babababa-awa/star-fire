@@ -16,7 +16,11 @@ func _ready() -> void:
 func _day_night_cycle_time_tick(day: int, hour: int, minute: int) -> void:
 	if Core.level == null or Core.level.level_mode == Core.LevelMode.MENU:
 		return
-		
+	
+	#TODO: formalize this
+	if day_night_cycle._goto_night:
+		return
+	
 	if hour == 18:
 		Core.audio.play_ambience(&"night", 10.0)
 	elif hour == 16:

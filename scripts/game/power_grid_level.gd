@@ -7,15 +7,12 @@ var _remove_item: bool = false
 var _remove_coords: Vector2i = Vector2i.ZERO
 var _adjacent_components: Array[LevelItemValue] = []
 
+var _is_launching: bool = false
+var _launch_delay = 0.75
+
 func _init(alias_: StringName) -> void:
 	super._init(alias_)
 
-func start() -> void:
-	await super.start()
-	
-	Core.game.day_night_cycle.pause_time = false
-	Core.game.day_night_cycle.initial_hour = 10
-	Core.audio.play_ambience(&"day")
 
 func reset(reset_type_: Core.ResetType) -> void:
 	super.reset(reset_type_)
@@ -23,6 +20,13 @@ func reset(reset_type_: Core.ResetType) -> void:
 	if (reset_type_ == Core.ResetType.START or 
 		reset_type_ == Core.ResetType.RESTART
 	):
+		Core.game.day_night_cycle.pause_time = false
+		Core.game.day_night_cycle.initial_hour = 10
+		Core.audio.play_ambience(&"day")
+	
+		_is_launching = false
+		_launch_delay = 0.75
+	
 		power_grid = PowerGrid.new()
 		
 		var level_item_values_ = items.get_items_from_type(Core.ItemType.COMPONENT)
@@ -38,7 +42,19 @@ func reset(reset_type_: Core.ResetType) -> void:
 		items.add_item_after.connect(_on_item_added_after)
 		items.remove_item_before.connect(_on_item_removed_before)
 		items.remove_item_after.connect(_on_item_removed_after)
-			
+
+func _process(delta_: float) -> void:
+	super._process(delta_)
+	
+	if not is_running():
+		return
+		
+	if _is_launching:
+		_launch_delay -= delta_
+		if _launch_delay <= 0.0:
+			power_grid.launch()
+			_is_launching = false
+
 func _get_power_grid_coords(position: Vector2) -> Vector2i:
 	var coords = position / Core.TILE_SIZE
 	return coords.floor()
@@ -88,11 +104,21 @@ func win() -> void:
 	Core.save.data[level_].win = true
 	Core.save.save_game()
 	
+	var launch_view_position: Vector2 = power_grid.launch_view_position()
+	
 	var offset_: Vector2 = Vector2(
-		-Core.player.global_position.x + 768.0,
-		-Core.player.global_position.y - 768.0
+		-Core.player.global_position.x + launch_view_position.x,
+		-Core.player.global_position.y - 1024.0
 	)
 	Core.camera.target_offset = offset_
+	
+	if (Core.game.day_night_cycle.past_hour < 18 or
+		Core.game.day_night_cycle.past_hour > 4
+	):
+		Core.audio.play_ambience(&"night")
+		Core.game.day_night_cycle.goto_night()
+
+	_is_launching = true
 
 	Core.player.win.win()
 	
