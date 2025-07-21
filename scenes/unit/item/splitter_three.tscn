@@ -1,7 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d04kiby68wdps"]
+[gd_scene load_steps=8 format=3 uid="uid://d04kiby68wdps"]
 
 [ext_resource type="Script" uid="uid://bo6w8cg70pt5d" path="res://scenes/unit/item/splitter_three.gd" id="1_ebwml"]
 [ext_resource type="TileSet" uid="uid://dqx6jkj8wpoka" path="res://resources/unit/item/items.tres" id="2_wm5sq"]
+[ext_resource type="TileSet" uid="uid://vepbkdlunoox" path="res://resources/unit/item/numbers.tres" id="3_wm5sq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wm5sq"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8b8ss"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iojl1"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bd1tc"]
 size = Vector2(256, 256)
@@ -17,6 +27,28 @@ script = ExtResource("1_ebwml")
 unique_name_in_owner = true
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 5, 0, 1, 0, 0, 0)
 tile_set = ExtResource("2_wm5sq")
+
+[node name="PowerLevel" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 9, 0, 3, 0, 0, 0)
+tile_set = ExtResource("2_wm5sq")
+
+[node name="PowerLights1" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_wm5sq")
+position = Vector2(89, 103)
+tile_set = ExtResource("3_wm5sq")
+
+[node name="PowerLights2" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_8b8ss")
+position = Vector2(119, 103)
+tile_set = ExtResource("3_wm5sq")
+
+[node name="PowerLights3" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_iojl1")
+position = Vector2(95, 103)
+tile_set = ExtResource("3_wm5sq")
 
 [node name="ConnectionTop" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
@@ -35,5 +67,6 @@ unique_name_in_owner = true
 tile_set = ExtResource("2_wm5sq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(128, 128)
 shape = SubResource("RectangleShape2D_bd1tc")

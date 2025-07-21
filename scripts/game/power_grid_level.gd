@@ -9,10 +9,10 @@ var _adjacent_components: Array[LevelItemValue] = []
 
 var _is_launching: bool = false
 var _launch_delay = 0.75
+var _awawa: bool = false
 
 func _init(alias_: StringName) -> void:
 	super._init(alias_)
-
 
 func reset(reset_type_: Core.ResetType) -> void:
 	super.reset(reset_type_)
@@ -26,6 +26,7 @@ func reset(reset_type_: Core.ResetType) -> void:
 	
 		_is_launching = false
 		_launch_delay = 0.75
+		_awawa = false
 	
 		power_grid = PowerGrid.new()
 		
@@ -42,6 +43,7 @@ func reset(reset_type_: Core.ResetType) -> void:
 		items.add_item_after.connect(_on_item_added_after)
 		items.remove_item_before.connect(_on_item_removed_before)
 		items.remove_item_after.connect(_on_item_removed_after)
+		
 
 func _process(delta_: float) -> void:
 	super._process(delta_)
@@ -54,6 +56,18 @@ func _process(delta_: float) -> void:
 		if _launch_delay <= 0.0:
 			power_grid.launch()
 			_is_launching = false
+	elif not _awawa:
+		var time = get_play_time()
+		if time > 900000:
+			_awawa = true
+			Core.audio.play_sfx(&"awawawawaaaaaaaa")
+			Core.speech.say(SpeechValue.new(
+				Core.player,
+				"AWAWAWAWAWAWAWAWA",
+				2.5,
+				Core.SpeechStyle.TALK,
+				Core.SpeechSize.MEDIUM,
+			))		
 
 func _get_power_grid_coords(position: Vector2) -> Vector2i:
 	var coords = position / Core.TILE_SIZE
@@ -123,5 +137,5 @@ func win() -> void:
 	Core.player.win.win()
 	
 func lose() -> void:
-	print("lose")
+	#print("lose")
 	pass

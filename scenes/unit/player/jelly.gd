@@ -67,6 +67,13 @@ func _process(delta_: float) -> void:
 		if level_item_value_ != null:
 			level_item_value_.node.orientate()
 			Core.level.power_grid.update_power_levels()
+	elif actions.is_just_pressed(&"game_show_phone"):
+		if Core.game.is_ui_visible(&"phone"):
+			Core.game.hide_ui(&"phone")
+			Core.game._hide_mouse()
+		else:
+			Core.game.show_ui(&"phone")
+			Core.game._show_mouse()
 	elif interact.is_interacting:
 		#Core.level.win()
 		var coords: Vector2i = (global_position / Core.TILE_SIZE).floor()
@@ -74,9 +81,13 @@ func _process(delta_: float) -> void:
 		if level_item_value_ != null and level_item_value_.item.alias == &"power_button":
 			level_item_value_.node.press_button()
 			if Core.level.power_grid.can_launch():
+				Core.audio.play_sfx(&"success")
 				Core.level.win()
 			else:
 				Core.level.lose()
+				Core.audio.play_sfx(&"failure")
+		#elif not items.pick_up_item():
+			#items.drop_selected_item()
 		
 	_update_sprite_state()
 

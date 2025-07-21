@@ -38,6 +38,7 @@ func _update_from_meta() -> void:
 		power_level = max(0, min(8, int(item_meta.power_level)))
 		
 func press_button() -> void:
+	Core.audio.play_sfx(&"power_button")
 	_is_button_pressed = true
 	
 func _process(delta_: float) -> void:

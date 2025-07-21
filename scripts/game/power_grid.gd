@@ -197,6 +197,10 @@ func _find_splitters_end_power_level(
 func _update_splitter_power_level(stack_splitters__: Array[Dictionary], visited_splitters__: Dictionary) -> Array[Dictionary]:
 	for index in stack_splitters__.size():
 		var power_level_ = visited_splitters__[stack_splitters__[index].coords]
+
+		var level_item_value_: LevelItemValue = get_component(stack_splitters__[index].coords)
+		level_item_value_.node.power_level = power_level_
+		level_item_value_.node.update_power_indicator()
 		
 		stack_splitters__[index].power_level = power_level_
 		

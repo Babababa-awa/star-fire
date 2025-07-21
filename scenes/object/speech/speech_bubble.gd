@@ -11,7 +11,7 @@ func reset(reset_type_: Core.ResetType) -> void:
 func refresh_bubble() -> void:
 	super.refresh_bubble()
 	
-	var bubble_size: Vector2 = Vector2(0, 96)
+	var bubble_size: Vector2 = Vector2(0, 768)
 	var tile_size: Vector2i = Vector2i(0, 3)
 	var horizontal_center_offset: int = 0
 	var offset: int = 0
@@ -24,7 +24,7 @@ func refresh_bubble() -> void:
 		
 	match speech_size:
 		Core.SpeechSize.SMALL:
-			bubble_size.x = 96.0
+			bubble_size.x = 768.0
 			tile_size.x = 3
 			horizontal_center_offset = 1
 			
@@ -37,9 +37,9 @@ func refresh_bubble() -> void:
 				%SpeechBubble.set_cell(Vector2i(5, i))
 				%SpeechBubble.set_cell(Vector2i(6, i))
 				
-			%SpeechLabel.size.x = 40.0
+			%SpeechLabel.size.x = 300.0
 		Core.SpeechSize.MEDIUM:
-			bubble_size.x = 160.0
+			bubble_size.x = 1280.0
 			tile_size.x = 5
 			horizontal_center_offset = 2
 			
@@ -52,9 +52,9 @@ func refresh_bubble() -> void:
 				%SpeechBubble.set_cell(Vector2i(5, i))
 				%SpeechBubble.set_cell(Vector2i(6, i))
 				
-			%SpeechLabel.size.x = 104.0
+			%SpeechLabel.size.x = 812.0
 		Core.SpeechSize.LARGE:
-			bubble_size.x = 224.0
+			bubble_size.x = 1792.0
 			tile_size.x = 7
 			horizontal_center_offset = 3
 			
@@ -67,7 +67,7 @@ func refresh_bubble() -> void:
 				%SpeechBubble.set_cell(Vector2i(5, i), tile_set_source_id, Vector2i(offset + 1, i))
 				%SpeechBubble.set_cell(Vector2i(6, i), tile_set_source_id, Vector2i(offset + 2, i))
 			
-			%SpeechLabel.size.x = 168.0
+			%SpeechLabel.size.x = 1324.0
 	
 	match speech_alignment:
 		Core.Alignment.TOP_LEFT:

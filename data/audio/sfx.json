@@ -14,6 +14,10 @@
 		"rand": true,
 		"pitch": false
 	},
+	"power_button": {
+		"format": "wav",
+		"pitch": true
+	},
 	"exit": {
 		"format": "wav",
 		"count": 3,

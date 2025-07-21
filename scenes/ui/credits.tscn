@@ -75,23 +75,23 @@ text = "Graphics"
 
 [node name="Label6" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 layout_mode = 2
-text = "Babababa, Robert Brooks"
+text = "Babababa, jcomcl, Robert Brooks"
 
 [node name="Label7" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 layout_mode = 2
-text = "Music"
+text = "Game Content"
 
 [node name="Label8" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 layout_mode = 2
+text = "Babababa, jcomcl"
+
+[node name="Label11" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="Label12" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
 text = "蒲鉾さちこ"
-
-[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-layout_mode = 2
-text = "Special Thanks"
-
-[node name="Label10" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-layout_mode = 2
-text = "Jordan"
 
 [node name="GotoButtonParent" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_e5ls7")]
 custom_minimum_size = Vector2(320, 0)

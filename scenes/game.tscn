@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://h462wqad38r7"]
+[gd_scene load_steps=17 format=3 uid="uid://h462wqad38r7"]
 
 [ext_resource type="Script" uid="uid://bgn6vg2aq8v6x" path="res://scenes/game.gd" id="1_fra1q"]
 [ext_resource type="PackedScene" uid="uid://c18xx1wuw4jhb" path="res://scenes/control/target_camera_2d.tscn" id="2_ee3hm"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://3bia3w2lcryp" path="res://scenes/ui/level_select.tscn" id="9_kvuet"]
 [ext_resource type="PackedScene" uid="uid://35sqtt83sll6" path="res://scenes/ui/credits.tscn" id="9_trtic"]
 [ext_resource type="PackedScene" uid="uid://bjnti3ijf6sjb" path="res://scenes/ui/loading.tscn" id="10_kr2w2"]
+[ext_resource type="PackedScene" uid="uid://bwpbtkxhe108a" path="res://scenes/ui/phone.tscn" id="12_ca42v"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_fra1q")
@@ -58,6 +59,9 @@ visible = false
 visible = false
 
 [node name="LevelSelect" parent="UI" instance=ExtResource("9_kvuet")]
+visible = false
+
+[node name="Phone" parent="UI" instance=ExtResource("12_ca42v")]
 visible = false
 
 [node name="Win" parent="UI" instance=ExtResource("5_0ykbg")]

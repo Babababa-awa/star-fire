@@ -273,6 +273,21 @@ text = "X Button"
 layout_mode = 2
 text = "Left Button"
 
+[node name="LabelPhone" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Show Phone"
+
+[node name="Label46" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Z, M"
+
+[node name="Label47" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Select"
+
+[node name="Label48" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+
 [node name="LabelPause" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 layout_mode = 2
 text = "Pause"
@@ -288,22 +303,6 @@ text = "Start Button"
 [node name="Label44" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
 layout_mode = 2
 text = "--"
-
-[node name="Label45" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-visible = false
-layout_mode = 2
-
-[node name="Label46" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-visible = false
-layout_mode = 2
-
-[node name="Label47" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-visible = false
-layout_mode = 2
-
-[node name="Label48" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer"]
-visible = false
-layout_mode = 2
 
 [node name="GotoButtonParent" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_75pis")]
 custom_minimum_size = Vector2(320, 0)
