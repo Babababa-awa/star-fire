@@ -71,10 +71,15 @@ func _process(delta_: float) -> void:
 		if Core.game.is_ui_visible(&"phone"):
 			Core.game.hide_ui(&"phone")
 			Core.game._hide_mouse()
-		else:
+			Core.player.items.drop_action_enabled = true
+		elif (
+			not Core.game.has_visible_uis(Core.UIType.GAME) and 
+			not Core.game.has_visible_uis(Core.UIType.MENU)
+		):
 			Core.game.show_ui(&"phone")
 			Core.game._show_mouse()
-	elif interact.is_interacting:
+			Core.player.items.drop_action_enabled = false
+	elif interact.is_interacting and not Core.game.is_ui_visible(&"win"):
 		#Core.level.win()
 		var coords: Vector2i = (global_position / Core.TILE_SIZE).floor()
 		var level_item_value_: LevelItemValue = Core.level.power_grid.get_component(coords)

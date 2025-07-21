@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://p4oyqu0tkye3"]
+
+[ext_resource type="Texture2D" uid="uid://basa4f8e4tqu1" path="res://assets/image/game/phone.png" id="1_e010p"]
+[ext_resource type="Texture2D" uid="uid://c1m7kq45oloq8" path="res://assets/image/game/phone_button.png" id="2_nt2ei"]
+
+[node name="PhoneRect" type="NinePatchRect"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -558.0
+offset_top = -811.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_e010p")
+patch_margin_left = 48
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 96
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -76.275
+offset_right = 33.0
+offset_bottom = -16.275
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_nt2ei")

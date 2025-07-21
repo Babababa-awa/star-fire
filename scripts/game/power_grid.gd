@@ -242,6 +242,9 @@ func _get_connected_neighbors(
 			var neighbor_item: LevelItemValue = get_component(neighbor_coords)
 			if neighbor_item == null:
 				continue
+				
+			if not neighbor_item.node.get(directions[direction_]):
+				continue
 			
 			if not _has_end_component(
 				coords_, 

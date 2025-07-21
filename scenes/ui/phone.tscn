@@ -1,0 +1,599 @@
+[gd_scene load_steps=17 format=3 uid="uid://bwpbtkxhe108a"]
+
+[ext_resource type="Script" uid="uid://cbu1746yclcl2" path="res://scenes/ui/phone.gd" id="1_m12kn"]
+[ext_resource type="PackedScene" uid="uid://p4oyqu0tkye3" path="res://scenes/ui/component/phone_rect.tscn" id="2_1o12m"]
+[ext_resource type="PackedScene" uid="uid://bbssswrytbmd4" path="res://scenes/ui/component/goto_button.tscn" id="3_7iixm"]
+[ext_resource type="Texture2D" uid="uid://wqnh3fmxcj6d" path="res://assets/image/game/phasetel.png" id="3_35dvq"]
+[ext_resource type="Theme" uid="uid://c7qokhvoo3v4w" path="res://resources/label_phone.tres" id="4_7iixm"]
+[ext_resource type="Texture2D" uid="uid://yufmaemt22h5" path="res://assets/image/game/sakana.png" id="4_j0bv6"]
+[ext_resource type="Texture2D" uid="uid://cln8c7lunjkl2" path="res://assets/image/game/jelly.png" id="6_nbvtu"]
+[ext_resource type="Texture2D" uid="uid://ctnp6307qhm7l" path="res://assets/image/game/ground.png" id="7_xyjsh"]
+[ext_resource type="Texture2D" uid="uid://d01gdtca1guy0" path="res://assets/image/game/diode.png" id="8_ofyjg"]
+[ext_resource type="Texture2D" uid="uid://b13cu0ktsdmux" path="res://assets/image/game/launcher.png" id="9_5apvs"]
+[ext_resource type="Texture2D" uid="uid://b3mrdhol00l2y" path="res://assets/image/game/wire.png" id="9_nxhb8"]
+[ext_resource type="Texture2D" uid="uid://b65mqptlq1ofr" path="res://assets/image/game/power_button.png" id="10_nxhb8"]
+[ext_resource type="Texture2D" uid="uid://dxj15j4m4by32" path="res://assets/image/game/splitter_four.png" id="11_q6umx"]
+[ext_resource type="Texture2D" uid="uid://bb61ytfogigvs" path="res://assets/image/game/splitter_three.png" id="12_au7c6"]
+[ext_resource type="Texture2D" uid="uid://c04mcwqkqcj2r" path="res://assets/image/game/resister.png" id="13_prvpx"]
+[ext_resource type="Texture2D" uid="uid://gpda256vcgs" path="res://assets/image/game/transformer.png" id="14_w7c0v"]
+
+[node name="Phone" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m12kn")
+ui_type = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PhoneRect" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_1o12m")]
+custom_minimum_size = Vector2(640, 960)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PhoneRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 39
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 82
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer"]
+layout_mode = 2
+color = Color(0.129412, 0.141176, 0.160784, 1)
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("3_35dvq")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_j0bv6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "H2oSakana"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Jelly, have you arrived yet? The firework show has 
+almost started.
+
+I need you there now."
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer19" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_nbvtu")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "Jelly Hoshiumi"
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "???"
+
+[node name="Control18" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_j0bv6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "H2oSakana"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "So the pyrotechnic we hired had to go home early. 
+Food poisoning - something about our coffee, I think 
+he said.
+
+Anyway, this is the last installation he had left to 
+finish, and he left instructions.
+
+Try not to worry about what any of that stuff does, 
+you'll probably explode if you touch it.
+
+We definately don't have the budget for that this 
+quarter.
+
+You can do this, right?"
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_nbvtu")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "Jelly Hoshiumi"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "No"
+
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_j0bv6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "H2oSakana"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "I'll buy you steak."
+
+[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_nbvtu")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "Jelly Hoshiumi"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Fine..."
+
+[node name="Control5" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_j0bv6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "H2oSakana"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Okay, minor error on my part.
+
+That one installation is actually nine.
+
+He hadn't started any of the other ones.
+
+BUT IT'S OKAY
+
+He's sending me some notes now..."
+
+[node name="Control6" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("6_nbvtu")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "Jelly Hoshiumi"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "..."
+
+[node name="Control7" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_j0bv6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "H2oSakana"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "uhhhh.
+
+Aha!"
+
+[node name="Control8" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_j0bv6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("4_7iixm")
+theme_override_font_sizes/font_size = 32
+text = "H2oSakana"
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "For the most part, all you got to do is wire the Power 
+Button to the Firework Launcher and then press the 
+big red button.
+
+There are other components, but I don't really 
+understand this stuff.
+
+Anyways, here are the notes."
+
+[node name="Control9" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectPowerButton" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_nxhb8")
+
+[node name="Label12" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Power Button:
+Press this red button when you are
+all wired up.
+
+The lights indicate how much power 
+is available from 1 to 8."
+
+[node name="Control10" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectLauncher" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_5apvs")
+
+[node name="Label11" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Firework Launcher:
+Requires exactly 1 power level to
+launch it.
+
+If the light is green, it's good to 
+launch.
+
+If it's red, it has too much 
+power inputed."
+
+[node name="Control17" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer18" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectWire" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer18"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_nxhb8")
+
+[node name="Label11" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer18"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Wire:
+Connect each component with 
+wires."
+
+[node name="Control11" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer15" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectSplitterThree" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("12_au7c6")
+
+[node name="Label12" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Three Pronged Splitter:
+Splits all input power levels equally 
+into the remaining outputs.
+
+The number display will tell you how
+much power is currently being 
+inputed,"
+
+[node name="Control12" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer14" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectSplitterFour" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("11_q6umx")
+
+[node name="Label13" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Four Pronged Splitter:
+Same as the three pronged splitter
+only with four prongs."
+
+[node name="Control13" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectGround" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_xyjsh")
+
+[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Ground:
+Allows you to divert 1 excess power 
+level to it.
+
+If the light is green, power is being 
+properly grounded.
+
+If it's red, it has too much 
+power inputed."
+
+[node name="Control14" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer16" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectResister" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer16"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("13_prvpx")
+
+[node name="Label14" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer16"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Resister:
+Decreases the power level by 1.
+
+This component can be rotated."
+
+[node name="Control15" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer17" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectTransformer" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("14_w7c0v")
+
+[node name="Label15" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Transfomer:
+Increases the power level by 1.
+
+This component can be rotated."
+
+[node name="Control16" type="Control" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRectDiode" type="TextureRect" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("8_ofyjg")
+
+[node name="Label10" type="Label" parent="MarginContainer/VBoxContainer/PhoneRect/MarginContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_7iixm")
+text = "Diode:
+Only allows power to travel in the
+direction of the arrow symbol."
+
+[node name="GotoButtonOk" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_7iixm")]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BUTTON_OK"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GotoButtonOk" to="." method="_on_goto_button_ok_pressed"]

@@ -138,7 +138,7 @@ texture_normal = ExtResource("4_8ehll")
 texture_pressed = ExtResource("5_i7y2i")
 texture_hover = ExtResource("6_t2qwf")
 texture_focused = ExtResource("7_wh1jf")
-goto_ui_id = &"start:level_5"
+goto_ui_id = &"start:level_7"
 style = "Tile"
 text = "5"
 
@@ -176,7 +176,7 @@ texture_normal = ExtResource("4_8ehll")
 texture_pressed = ExtResource("5_i7y2i")
 texture_hover = ExtResource("6_t2qwf")
 texture_focused = ExtResource("7_wh1jf")
-goto_ui_id = &"start:level_7"
+goto_ui_id = &"start:level_5"
 style = "Tile"
 text = "7"
 

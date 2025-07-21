@@ -5,7 +5,7 @@
 	},
 	"player": {
 		"alias": "jelly",
-		"position": [640, 1152],
+		"position": [-1536, 3072],
 		"mode": "normal",
 		"physics": "plane",
 		"items": [
